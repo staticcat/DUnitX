@@ -33,7 +33,7 @@ uses
 
 type
   ///  A Base class for loggers that do not need to use every interface method.
-  TDUnitXNullLogger = class(TInterfacedObject,ITestLogger)
+  TDUnitXNullLogger = class(TInterfacedObject, ITestLogger)
   protected
     procedure OnBeginTest(const threadId: TThreadID; const Test: ITestInfo); virtual;
     procedure OnEndSetupFixture(const threadId: TThreadID; const fixture: ITestFixtureInfo); virtual;
@@ -55,7 +55,7 @@ type
     procedure OnTestIgnored(const threadId: TThreadID; const AIgnored: ITestResult); virtual;
     procedure OnTestSuccess(const threadId: TThreadID; const Test: ITestResult); virtual;
     procedure OnTestingEnds(const RunResults: IRunResults); virtual;
-    procedure OnTestingStarts(const threadId: TThreadID; testCount, testActiveCount: Cardinal); virtual;
+    procedure OnTestingStarts(const threadId: TThreadID; const testCount, testActiveCount: Cardinal); virtual;
   end;
 
 implementation
@@ -152,7 +152,7 @@ begin
 
 end;
 
-procedure TDUnitXNullLogger.OnTestingStarts(const threadId: TThreadID; testCount, testActiveCount: Cardinal);
+procedure TDUnitXNullLogger.OnTestingStarts(const threadId: TThreadID; const testCount, testActiveCount: Cardinal);
 begin
 
 end;

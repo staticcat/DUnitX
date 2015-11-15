@@ -339,7 +339,7 @@ type
     ///	  Called at the start of testing. The default console logger prints the
     ///	  DUnitX banner.
     ///	</summary>
-    procedure OnTestingStarts(const threadId: TThreadID; testCount, testActiveCount: Cardinal);
+    procedure OnTestingStarts(const threadId: TThreadID; const testCount, testActiveCount: Cardinal);
 
     ///	<summary>
     ///	  //Called before a Fixture is run.

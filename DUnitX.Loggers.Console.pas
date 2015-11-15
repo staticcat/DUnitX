@@ -51,7 +51,7 @@ type
     procedure SetConsoleSummaryColor(); virtual;
     procedure SetConsoleWarningColor(); virtual;
   protected
-    procedure OnTestingStarts(const threadId: TThreadID; testCount, testActiveCount: Cardinal);
+    procedure OnTestingStarts(const threadId: TThreadID; const testCount, testActiveCount: Cardinal);
 
     procedure OnStartTestFixture(const threadId: TThreadID; const fixture: ITestFixtureInfo);
 
@@ -425,7 +425,7 @@ begin
   SetConsoleDefaultColor();
 end;
 
-procedure TDUnitXConsoleLogger.OnTestingStarts(const threadId: TThreadID; testCount, testActiveCount : Cardinal);
+procedure TDUnitXConsoleLogger.OnTestingStarts(const threadId: TThreadID; const testCount, testActiveCount : Cardinal);
 begin
   if FQuietMode then
   begin
