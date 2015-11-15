@@ -99,7 +99,6 @@ end;
 
 procedure TTimeoutThread.Execute;
 var
-  I: Integer;
   startTime : Cardinal;
   elaspedTime : Cardinal;
 begin
